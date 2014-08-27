@@ -1,0 +1,94 @@
+\NeedsTeXFormat{LaTeX2e}[1996/06/01]
+
+\documentclass[multi]{EngC} % multi-contributor option
+
+\usepackage[rightcaption,raggedright]{sidecap}% for side captions
+\usepackage{framed}         % for floatingboxes
+\usepackage{soul}           % for letterspacing in theorem-style headings
+
+% for the Harvard author-date referencing system
+\usepackage[agsm]{harvard}
+
+% if you are using either vancouver.bst or IEEEtran.bst and wish to remove
+% square braces in the reference list, uncomment the line below
+% \removesquarebraces
+
+\usepackage{theorem}
+\usepackage{rotating}
+\usepackage{floatpag}
+\rotfloatpagestyle{empty}
+\usepackage{graphicx}
+
+% indexes
+\usepackage{makeidx}
+\makeindex
+
+
+% see chapter 3 for details
+%\theoremstyle{plain}% default
+%\newtheorem{theorem}{Theorem}[chapter]
+%\newtheorem{lemma}[theorem]{Lemma}
+%\newtheorem*{corollary}{Corollary}
+%
+%\theoremstyle{definition}
+%\newtheorem{definition}[theorem]{Definition}
+%\newtheorem{condition}[theorem]{Condition}
+%
+%\theoremstyle{remark}
+%\newtheorem{remark}{Remark}[chapter]
+%\newtheorem{notation}[remark]{Notation}
+%\newtheorem*{case}{Case}
+%
+\hyphenation{line-break line-breaks docu-ment triangle cambridge amsthdoc
+cambridgemods baseline-skip author authors cambridgestyle en-vir-on-ment polar}
+
+\setcounter{tocdepth}{2}
+
+\begin{document}
+\title[A collection of vegetarian recipes]
+{Kalpana's cookbook}
+
+\author{Kalpana Seshadrinathan \\ Aravind Sundaresan}
+
+\frontmatter
+\maketitle
+\tableofcontents
+\listoffigures
+%\listofcontributors
+%\include{notation}
+
+\mainmatter
+
+\input{files/cookbook}
+
+\backmatter
+% if you only have one appendix, use \oneappendix instead of \appendix
+%\appendix
+%\include{appendixA}
+%\endappendix
+
+% insert a blank line to the toc list
+\addtocontents{toc}{\vspace{\baselineskip}}
+\theendnotes
+
+%\bibliographystyle{vancouver}% uncomment for vancouver style
+%% \renewcommand{\refname}{Bibliography}% if you prefer this heading
+%\bibliography{percolation}\label{refs}
+
+\cleardoublepage
+
+% indexes
+
+% for a single index
+\printindex
+
+% for multiple indexes using multind.sty
+%\printindex{authors}{Author index}
+%\printindex{subject}{Subject index}
+
+% for multiple indexes using index.sty
+% \printindex[aut]
+% \printindex
+
+\end{document}
+\endinput
